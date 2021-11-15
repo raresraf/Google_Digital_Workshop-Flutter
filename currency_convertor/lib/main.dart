@@ -96,7 +96,9 @@ class _MyCustomFormState extends State<MyCustomForm> {
               fixedSize: const Size(100, 40),
             ),
           ),
-          const SizedBox(height: 12,),
+          const SizedBox(
+            height: 12,
+          ),
           if (isCorrect)
             Center(
               child: Text(

@@ -54,8 +54,7 @@ class _CustomBodyState extends State<CustomBody> {
               ),
               TextField(
                 controller: controller,
-                keyboardType:
-                    const TextInputType.numberWithOptions(decimal: true),
+                keyboardType: const TextInputType.numberWithOptions(decimal: true),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.55,
@@ -81,37 +80,30 @@ class _CustomBodyState extends State<CustomBody> {
                           intValue = value.floor();
                         }
                         if (intValue == -1) {
-                          if (CheckConstraints.isSquare(value) &&
-                              CheckConstraints.isCube(value)) {
-                            alertText =
-                                "Number $value is both SQUARE and TRIANGULAR.";
+                          if (CheckConstraints.isSquare(value) && CheckConstraints.isCube(value)) {
+                            alertText = "Number $value is both SQUARE and TRIANGULAR.";
                           } else if (CheckConstraints.isSquare(value)) {
                             alertText = "Number $value is SQUARE.";
                           } else if (CheckConstraints.isCube(value)) {
                             alertText = "Number $value is TRIANGULAR.";
                           } else {
-                            alertText =
-                                "Number $value is neither TRIANGULAR or SQUARE.";
+                            alertText = "Number $value is neither TRIANGULAR or SQUARE.";
                           }
                         } else {
-                          if (CheckConstraints.isSquare(intValue) &&
-                              CheckConstraints.isCube(intValue)) {
-                            alertText =
-                                "Number $intValue is both SQUARE and TRIANGULAR.";
+                          if (CheckConstraints.isSquare(intValue) && CheckConstraints.isCube(intValue)) {
+                            alertText = "Number $intValue is both SQUARE and TRIANGULAR.";
                           } else if (CheckConstraints.isSquare(intValue)) {
                             alertText = "Number $intValue is SQUARE.";
                           } else if (CheckConstraints.isCube(intValue)) {
                             alertText = "Number $intValue is TRIANGULAR.";
                           } else {
-                            alertText =
-                                "Number $intValue is neither TRIANGULAR or SQUARE.";
+                            alertText = "Number $intValue is neither TRIANGULAR or SQUARE.";
                           }
                         }
                       }
 
                       AlertDialog alert = AlertDialog(
-                        title:
-                            intValue == -1 ? Text("$value") : Text("$intValue"),
+                        title: intValue == -1 ? Text("$value") : Text("$intValue"),
                         content: Text(alertText),
                         actions: [
                           TextButton(
