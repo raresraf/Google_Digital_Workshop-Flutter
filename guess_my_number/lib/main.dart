@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           centerTitle: true,
           title: const Text(
-            "Guess my number",
+            'Guess my number',
             style: TextStyle(
               fontSize: 20,
             ),
@@ -38,7 +37,7 @@ class CustomBody extends StatefulWidget {
 
 class _CustomBodyState extends State<CustomBody> {
   final TextEditingController controller = TextEditingController();
-  String textButton = "Guess";
+  String textButton = 'Guess';
   bool noGuess = true;
   int pickedNumber = -1;
   int targetNumber = Random().nextInt(100) + 1;
@@ -70,12 +69,12 @@ class _CustomBodyState extends State<CustomBody> {
             ),
             if (!noGuess)
               Column(
-                children: [
+                children: <Widget>[
                   const SizedBox(
                     height: 20,
                   ),
                   Text(
-                    "You tried $pickedNumber",
+                    'You tried $pickedNumber',
                     style: const TextStyle(
                       color: Colors.grey,
                       fontSize: 40,
@@ -86,7 +85,7 @@ class _CustomBodyState extends State<CustomBody> {
                   ),
                   if (pickedNumber < targetNumber)
                     const Text(
-                      "Try Higher",
+                      'Try Higher',
                       style: TextStyle(
                         color: Colors.grey,
                         fontSize: 40,
@@ -94,7 +93,7 @@ class _CustomBodyState extends State<CustomBody> {
                     ),
                   if (pickedNumber > targetNumber)
                     const Text(
-                      "Try Lower",
+                      'Try Lower',
                       style: TextStyle(
                         color: Colors.grey,
                         fontSize: 40,
@@ -102,7 +101,7 @@ class _CustomBodyState extends State<CustomBody> {
                     ),
                   if (pickedNumber == targetNumber)
                     const Text(
-                      "You guessed it right.",
+                      'You guessed it right.',
                       style: TextStyle(
                         color: Colors.grey,
                         fontSize: 40,
@@ -118,12 +117,12 @@ class _CustomBodyState extends State<CustomBody> {
               margin: const EdgeInsetsDirectional.all(16),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
-                children: [
+                children: <Widget>[
                   const SizedBox(
                     height: 5,
                   ),
                   const Text(
-                    "Try a number!",
+                    'Try a number!',
                     style: TextStyle(
                       color: Colors.grey,
                       fontSize: 40,
@@ -137,8 +136,7 @@ class _CustomBodyState extends State<CustomBody> {
                     margin: const EdgeInsetsDirectional.all(20),
                     child: TextField(
                       controller: controller,
-                      keyboardType:
-                          const TextInputType.numberWithOptions(decimal: true),
+                      keyboardType: const TextInputType.numberWithOptions(decimal: true),
                     ),
                   ),
                   ElevatedButton(
@@ -146,27 +144,27 @@ class _CustomBodyState extends State<CustomBody> {
                       final int? value = int.tryParse(controller.text);
 
                       setState(() {
-                        if (textButton == "Reset") {
+                        if (textButton == 'Reset') {
                           noGuess = true;
                           pickedNumber = -1;
                           targetNumber = Random().nextInt(100) + 1;
-                          textButton = "Guess";
+                          textButton = 'Guess';
                         } else if (value != null) {
                           noGuess = false;
                           pickedNumber = value;
                           if (pickedNumber == targetNumber) {
-                            textButton = "Reset";
+                            textButton = 'Reset';
                           }
                           controller.clear();
                         }
                       });
                       FocusScope.of(context).requestFocus(FocusNode());
                     },
-                    child: Text(textButton),
                     style: ElevatedButton.styleFrom(
                       primary: Colors.white54,
                       onPrimary: Colors.black,
                     ),
+                    child: Text(textButton),
                   ),
                 ],
               ),
