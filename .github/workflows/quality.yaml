@@ -10,7 +10,7 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: 'stable'
-      - name: Get packages.
+      - name: Get flutter packages.
         run: flutter packages get
       - name: Run format
         run: flutter format -l 120 --set-exit-if-changed .
