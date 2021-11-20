@@ -6,20 +6,16 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
-  final String appTitle = "Currency convertor";
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: appTitle,
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text(
-            appTitle,
-            style: const TextStyle(
+          title: const Text(
+            'Currency convertor',
+            style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
@@ -56,7 +52,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
             height: MediaQuery.of(context).size.height * 0.3,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/leu.jpg"),
+                image: AssetImage('assets/images/leu.jpg'),
                 fit: BoxFit.fill,
               ),
             ),
@@ -66,7 +62,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
             child: TextField(
               controller: controller,
               decoration: InputDecoration(
-                hintText: "enter the amount in EUR",
+                hintText: 'enter the amount in EUR',
                 errorText: errorText,
               ),
               keyboardType: const TextInputType.numberWithOptions(decimal: true),
@@ -78,7 +74,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
 
               setState(() {
                 if (doubleValue == null) {
-                  errorText = "please enter a number";
+                  errorText = 'please enter a number';
                   isCorrect = false;
                 } else {
                   money = doubleValue * exchange;
@@ -89,12 +85,12 @@ class _MyCustomFormState extends State<MyCustomForm> {
 
               FocusScope.of(context).requestFocus(FocusNode());
             },
-            child: const Text("CONVERT!"),
             style: ElevatedButton.styleFrom(
-              primary: Colors.white54,
               onPrimary: Colors.black,
+              primary: Colors.white54,
               fixedSize: const Size(100, 40),
             ),
+            child: const Text('CONVERT!'),
           ),
           const SizedBox(
             height: 12,
@@ -102,7 +98,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
           if (isCorrect)
             Center(
               child: Text(
-                "${money.toStringAsFixed(2)} RON",
+                '${money.toStringAsFixed(2)} RON',
                 style: const TextStyle(
                   color: Colors.blueGrey,
                   fontSize: 32,
