@@ -55,7 +55,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
             Column(
               children: <Widget>[
                 const Text(
-                  "Please input a number to see if it is square or triangularkok.",
+                  'Please input a number to see if it is square or triangular.',
                   style: TextStyle(
                     fontSize: 22,
                   ),
