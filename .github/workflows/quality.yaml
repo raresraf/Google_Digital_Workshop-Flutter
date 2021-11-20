@@ -2,9 +2,9 @@ name: Check the quality of my code
 on:
   push:
     paths:
-      - currency_convertor/
-      - guess_my_number/
-      - number_shape/
+      - currency_convertor/**
+      - guess_my_number/**
+      - number_shape/**
 
 jobs:
   quality_check:
